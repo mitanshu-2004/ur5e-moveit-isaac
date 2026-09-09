@@ -1,0 +1,8 @@
+api:
+  listen: "127.0.0.1:1984"
+rtsp:
+  listen: "127.0.0.1:8554"
+webrtc:
+  listen: ""
+streams:
+  screen: "exec:ffmpeg -nostdin -hide_banner -loglevel warning -f x11grab -video_size 1280x720 -framerate 20 -i :1 -an -vf fps=20 -c:v h264_nvenc -preset p1 -tune ull -rc cbr -b:v 4M -maxrate 4M -bufsize 100k -g 10 -bf 0 -pix_fmt yuv420p -rtsp_transport tcp -f rtsp {output}"

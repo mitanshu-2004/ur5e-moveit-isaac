@@ -1,0 +1,21 @@
+controller_manager:
+  ros__parameters:
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+    # MoveIt's UR config sends trajectories to this name
+    scaled_joint_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+scaled_joint_trajectory_controller:
+  ros__parameters:
+    joints: [shoulder_pan_joint, shoulder_lift_joint, elbow_joint, wrist_1_joint, wrist_2_joint, wrist_3_joint]
+    command_interfaces: [position]
+    state_interfaces: [position]
+    constraints:
+      # Joint position goal tolerance, in radians.
+      shoulder_pan_joint: {goal: 0.02}
+      shoulder_lift_joint: {goal: 0.02}
+      elbow_joint: {goal: 0.02}
+      wrist_1_joint: {goal: 0.02}
+      wrist_2_joint: {goal: 0.02}
+      wrist_3_joint: {goal: 0.02}
