@@ -2,6 +2,8 @@
 
 Single script to control UR5e in Rviz using end effector pose
 
+[RViz demo video](rviz_demo.webm)
+
 ## Run
 
 Required ROS 2 packages:
