@@ -2,7 +2,7 @@
 
 Single script to control UR5e in Rviz using end effector pose
 
-[RViz demo video](rviz_demo.webm)
+[rviz_demo.webm](https://github.com/user-attachments/assets/d772afd3-e68c-45cb-9cc7-2a805b198086)
 
 ## Run
 
