@@ -4,8 +4,12 @@ A terminal pose command moves a UR5e arm in Isaac Sim. MoveIt plans the motion; 
 
 ## Videos
 
-- [Demo](videos/isaac_demo.mp4)
-- [Screencast](videos/isaac_screencast.mp4)
+
+https://github.com/user-attachments/assets/dfdd6568-1701-4558-b485-67d6784170f8
+
+https://github.com/user-attachments/assets/c900e40e-52c3-478c-bb5b-e6fe19f12252
+
+
 
 ## Setup
 
