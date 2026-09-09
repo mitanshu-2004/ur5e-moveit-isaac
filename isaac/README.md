@@ -1,26 +1,17 @@
-# UR5e in Isaac Sim
+# Stage 2: Isaac Sim
 
-A terminal pose command moves a UR5e arm in Isaac Sim. MoveIt plans the motion; ros2_control sends joint commands to Isaac Sim and receives joint states.
-
-## Videos
-
-### Isaac Sim demo
-
-https://github.com/user-attachments/assets/dfdd6568-1701-4558-b485-67d6784170f8
-
-### Terminal and live-view screencast
-
-https://github.com/user-attachments/assets/c900e40e-52c3-478c-bb5b-e6fe19f12252
+Same script as Stage 1. Isaac Sim replaces the driver's mock hardware:
+`topic_based_ros2_control` sends joint commands to Isaac on
+`/isaac_joint_commands` and reads `/isaac_joint_states` back.
 
 ## Setup
 
-Complete [Studio setup](SETUP-ON-LIGHTNING.md) for installation, the virtual display, and live viewing. Its final step returns here to run the robot.
+Needs an NVIDIA GPU. Follow [SETUP-ON-LIGHTNING.md](SETUP-ON-LIGHTNING.md)
+once, then return here.
 
 ## Run
 
-Run the following command blocks in separate studio terminals, in order. Keep each process running while starting the next.
-
-### 1. Simulator
+Each block in its own terminal. Keep every process running while starting the next.
 
 ```sh
 source /opt/ros/jazzy/setup.zsh
@@ -29,16 +20,12 @@ DISPLAY=:1 OMNI_KIT_ACCEPT_EULA=YES ~/isaacsim/python.sh ~/mowito/isaac/scripts/
 
 Wait for `ISAAC_READY`.
 
-### 2. Controllers and MoveIt
-
-In a new terminal, start the controllers:
-
 ```sh
 source ~/ws/install/setup.zsh
 ros2 launch ~/mowito/isaac/scripts/bringup.launch.py
 ```
 
-Wait for both controllers to report `Configured and activated`. In another terminal, start MoveIt:
+Wait for both controllers to report `Configured and activated`.
 
 ```sh
 source /opt/ros/jazzy/setup.zsh
@@ -47,16 +34,13 @@ ros2 launch ur_moveit_config ur_moveit.launch.py ur_type:=ur5e launch_rviz:=fals
 
 Wait for `You can start planning now`.
 
-### 3. Pose input and recording
-
-In a new studio terminal, start the pose script. It also records display `:1` to `~/isaac_demo.mp4`; move or rename an existing recording before starting.
-
 ```sh
 source /opt/ros/jazzy/setup.zsh
 python3 ~/mowito/isaac/scripts/pose_cmd.py
 ```
 
-Enter `x y z roll pitch yaw` in metres and degrees. Wait for each result before entering the next pose:
+This also records display `:1` to `~/isaac_demo.mp4`. Move an existing
+recording first. Enter poses and wait for each result:
 
 ```text
 0.30 -0.25 0.50 180 0 0
@@ -65,4 +49,4 @@ Enter `x y z roll pitch yaw` in metres and degrees. Wait for each result before 
 q
 ```
 
-The third pose is outside the workspace. Enter `q` or press Ctrl+C to finish the video.
+The third pose is out of reach. `q` stops the script and finishes the recording.
