@@ -8,7 +8,8 @@ moves the UR5e there through the UR ROS 2 driver and MoveIt.
 RViz shows the arm following the UR driver's mock hardware. The last pose is
 out of reach on purpose.
 
-https://github.com/user-attachments/assets/d772afd3-e68c-45cb-9cc7-2a805b198086
+[rviz_demo.webm](https://github.com/user-attachments/assets/1d0ba2a9-3bba-4c1b-b730-7f97bd389c49)
+
 
 ## [Stage 2: Isaac Sim](isaac/)
 
@@ -17,11 +18,19 @@ Lightning AI Studio. Two videos of the same run.
 
 **Screencast.** The simulator is a browser stream from the cloud, so it is laggy and low resolution.
 
-https://github.com/user-attachments/assets/c900e40e-52c3-478c-bb5b-e6fe19f12252
+
+
+https://github.com/user-attachments/assets/a316df73-7c69-4ed7-abdf-12b8682456aa
+
+
 
 **Simulator recording.** Captured on the cloud machine itself.
 
-https://github.com/user-attachments/assets/dfdd6568-1701-4558-b485-67d6784170f8
+
+
+https://github.com/user-attachments/assets/953d5bca-b81c-4d0a-860c-7b8bf3854d63
+
+
 
 ## How it works
 
