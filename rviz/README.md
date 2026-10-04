@@ -1,4 +1,4 @@
-# Stage 1: RViz
+# RViz with mock hardware
 
 ```bash
 sudo apt install ros-jazzy-ur ros-jazzy-moveit
@@ -20,7 +20,7 @@ done
 failed: GOAL_STATE_INVALID
 ```
 
-Position is in metres, angles in degrees. `180 0 0` points the tool down.
+Position is in metres in `base_link`, angles in degrees. `180 0 0` points the tool down.
 
 The script sends the pose to MoveIt as one `MoveGroup` goal. MoveIt plans the
 motion and sends it to the UR driver, and RViz shows the result.

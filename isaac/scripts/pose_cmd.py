@@ -38,11 +38,11 @@ def build_goal(pose):
     goal = MoveGroup.Goal()
     goal.request.group_name = GROUP
     goal.request.allowed_planning_time = 15.0
-    # Slow motion for the demonstration.
+    # slow enough to watch. both, or the arm snaps to cruise speed instead of easing into it
     goal.request.max_velocity_scaling_factor = 0.1
     goal.request.max_acceleration_scaling_factor = 0.1
 
-    # where the tool must land, 5 mm sphere
+    # where the tool must land, 5 mm radius sphere
     region = SolidPrimitive()
     region.type = SolidPrimitive.SPHERE
     region.dimensions = [0.005]

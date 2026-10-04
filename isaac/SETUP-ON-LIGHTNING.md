@@ -1,6 +1,6 @@
 # Studio setup
 
-Ubuntu 24.04, Tesla T4, NVIDIA driver 580, Isaac Sim 5.1, ROS 2 Jazzy. Use zsh and place this folder at `~/mowito/isaac`.
+Ubuntu 24.04, Tesla T4, NVIDIA driver 580, Isaac Sim 5.1, ROS 2 Jazzy. Use zsh and place this folder at `~/ur5e-moveit-isaac/isaac`.
 
 ## 1. ROS and display tools
 
@@ -64,14 +64,14 @@ Run each command block in a separate studio terminal.
 Start the video stream:
 
 ```sh
-cd ~/mowito/isaac/live_view
+cd ~/ur5e-moveit-isaac/isaac/live_view
 ~/.local/bin/go2rtc -config live_view.yaml
 ```
 
 Serve the browser viewer:
 
 ```sh
-cd ~/mowito/isaac/live_view
+cd ~/ur5e-moveit-isaac/isaac/live_view
 nginx -c "$PWD/live_view.nginx.conf" -p "$PWD" -g 'daemon off;'
 ```
 
